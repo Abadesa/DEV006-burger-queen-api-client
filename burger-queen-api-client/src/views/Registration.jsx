@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 function Registration() {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');

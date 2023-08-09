@@ -8,9 +8,11 @@ import RegistrationFailed from './views/RegistrationFailed';
 import RegistrationSuccess from './views/RegistrationFailed';
 import BreakfastMenu from './views/BreakfastMenu';
 import './index.css';
+import { AuthProvider } from './AuthContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
@@ -21,5 +23,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         {/* Agrega aquí más rutas si lo deseas */}
       </Routes>
     </Router>
+    </AuthProvider>
   </React.StrictMode>,
 );

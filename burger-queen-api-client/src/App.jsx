@@ -13,6 +13,7 @@ import OrderSummary from './views/OrderSummary';
 import Orders from './views/Orders';
 import ChefOrders from './views/ChefOrders';
 import AdminView from './views/AdminView';
+import { AuthProvider } from './AuthContext';
 
 function App() {
   // Estado global para el usuario que ha iniciado sesión
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <Router>
+      <AuthProvider>
       {/* Barra de navegación común para todas las vistas */}
       <Navbar user={user} />
 
@@ -43,6 +45,7 @@ function App() {
         <Route path="/chef-orders" component={ChefOrders} />
         <Route path="/admin-view" component={AdminView} />
       </Switch>
+      </AuthProvider>
     </Router>
   );
 }
